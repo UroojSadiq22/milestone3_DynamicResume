@@ -1,6 +1,6 @@
 "use client";
 
-import { ChangeEvent, FormEvent, SetStateAction, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { Button } from "./ui/button";
 
 export default function ResumeBuilder() {
