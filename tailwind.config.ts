@@ -12,6 +12,7 @@ const config: Config = {
 		fontFamily: {
 			// Add your custom fonts here
 			'subheadings': ['Cursive'],
+			'heading': ['Fascinate Inline'],
 		  },
   		colors: {
   			background: 'hsl(var(--background))',

@@ -117,60 +117,64 @@ export default function ResumeBuilder() {
 
   return (
     <div className="min-h-screen bg-black p-10">
-      <h1 className="text-5xl text-center text-yellow-600 mb-10">
+      <h1 className="sm:text-6xl text-3xl font-heading text-center text-yellow-600 sm:mb-10 mb-6">
         Dynamic Resume Builder
       </h1>
-      <div style={{ boxShadow: "0 0 20px rgba(255, 255, 255, 0.5)" }} className="bg-gradient-to-br from-yellow-500 to-orange-400 dark:from-yellow-900 dark:to-orange-900 border-2 border-gray-400 p-8 rounded-lg w-4/5 h-104 mx-auto">
+      <div style={{ boxShadow: "0 0 20px rgba(255, 255, 255, 0.5)" }} className="bg-gradient-to-br from-yellow-500 to-orange-400 dark:from-yellow-900 dark:to-orange-900 border-2 border-gray-400 sm:p-8 p-4 sm:p-10 rounded-lg max-w-5xl w-full mx-auto">
         <form onSubmit={handleSubmit}>
-          <div className="bg-black mb-8 p-6 space-y-4">
+          <div className="bg-black mb-8 sm:p-6 p-4 space-y-4">
             <div>
-              <h1 className="text-3xl text-yellow-500 mb-6 font-subheadings">
+              <h1 className="sm:text-3xl text-xl text-yellow-500 mb-6 font-subheadings">
                 Personal Information
               </h1>
-              <label className="block text-lg text-white">Name:</label>
+              <label className="block sm:text-lg text-sm text-white">Name:</label>
               <input
                 type="text"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="p-1 w-full rounded bg-gray-800 text-white border-2 border-transparent focus:border-yellow-600 focus:outline-none"
+                className="sm:p-1 w-full rounded bg-gray-800 text-white border-2 border-transparent focus:border-yellow-600 focus:outline-none"
+                required
               />
             </div>
             <div>
-              <label className="block text-lg text-white">Email:</label>
+              <label className="block sm:text-lg text-sm text-white">Email:</label>
               <input
                 type="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="p-1 w-full rounded bg-gray-800 text-white border-2 border-transparent focus:border-yellow-600 focus:outline-none"
+                className="sm:p-1 w-full rounded bg-gray-800 text-white border-2 border-transparent focus:border-yellow-600 focus:outline-none"
+                required
               />
             </div>
             <div>
-              <label className="block text-lg text-white">Phone:</label>
+              <label className="block sm:text-lg text-sm text-white">Phone:</label>
               <input
                 type="tel"
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="p-1 w-full rounded bg-gray-800 text-white border-2 border-transparent focus:border-yellow-600 focus:outline-none"
+                className="sm:p-1 w-full rounded bg-gray-800 text-white border-2 border-transparent focus:border-yellow-600 focus:outline-none"
+                required
               />
             </div>
           </div>
 
-          <div className="bg-black mb-8 p-6 space-y-4">
-            <h1 className="text-3xl text-yellow-500 mb-6 font-subheadings">
-              Education:
+          <div className="bg-black mb-8 sm:p-6 p-4 space-y-4">
+            <h1 className="sm:text-3xl text-xl text-yellow-500 mb-6 font-subheadings">
+              Education
             </h1>
             <div>
-              <label className="block text-lg text-white">
+              <label className="block sm:text-lg text-sm text-white">
                 Highest Education:
               </label>
               <select
                 name="highestEducation"
                 value={formData.education.highestEducation}
                 onChange={handleChange}
-                className="p-2 w-full rounded cursor-pointer bg-gray-800 text-white border-2 border-transparent focus:border-yellow-600 focus:outline-none"
+                className="sm:p-2 p-1 w-full rounded cursor-pointer bg-gray-800 text-white border-2 border-transparent focus:border-yellow-600 focus:outline-none"
+                required
               >
                 <option value="" disabled>
                   Select your highest education
@@ -184,55 +188,58 @@ export default function ResumeBuilder() {
               </select>
             </div>
             <div>
-              <label className="block text-lg text-white">School:</label>
+              <label className="block sm:text-lg text-sm text-white">School:</label>
               <input
                 type="text"
                 name="school"
                 value={formData.education.school}
                 onChange={handleChange}
-                className="p-1 w-full rounded bg-gray-800 text-white border-2 border-transparent focus:border-yellow-600 focus:outline-none"
+                className="sm:p-1 w-full rounded bg-gray-800 text-white border-2 border-transparent focus:border-yellow-600 focus:outline-none"
+                required
               />
             </div>
             <div>
-              <label className="block text-lg text-white">Field:</label>
+              <label className="block sm:text-lg text-sm text-white">Field:</label>
               <input
                 type="text"
                 name="field"
                 value={formData.education.field}
                 onChange={handleChange}
-                className="p-1 w-full rounded bg-gray-800 text-white border-2 border-transparent focus:border-yellow-600 focus:outline-none"
+                className="sm:p-1 w-full rounded bg-gray-800 text-white border-2 border-transparent focus:border-yellow-600 focus:outline-none"
+                required
               />
             </div>
             <div>
-              <label className="block text-lg text-white">Passing Year:</label>
+              <label className="block sm:text-lg text-sm text-white">Passing Year:</label>
               <input
                 type="text"
                 name="passingYear"
                 value={formData.education.passingYear}
                 onChange={handleChange}
-                className="p-1 w-full rounded bg-gray-800 text-white border-2 border-transparent focus:border-yellow-600 focus:outline-none"
+                className="sm:p-1 w-full rounded bg-gray-800 text-white border-2 border-transparent focus:border-yellow-600 focus:outline-none"
+                required
               />
             </div>
           </div>
 
-          <div className="bg-black mb-8 p-6">
-            <h1 className="text-3xl text-yellow-500 mb-6 font-subheadings">
-              Skills:
+          <div className="bg-black mb-8 sm:p-6 p-4">
+            <h1 className="sm:text-3xl text-xl text-yellow-500 mb-6 font-subheadings">
+              Skills
             </h1>
-            <label className="block text-lg text-gray-400">
+            <label className="block sm:text-lg text-sm text-gray-400">
               List Your Skills Here
             </label>
-            <div className="flex gap-4">
+            <div className="flex gap-4 flex-col sm:flex-row">
               <input
                 type="text"
                 value={newSkill}
                 onChange={handleSkillChange}
-                className="p-1 w-full rounded bg-gray-800 text-white border-2 border-transparent focus:border-yellow-600 focus:outline-none"
+                className="sm:p-1 w-full rounded bg-gray-800 text-white border-2 border-transparent focus:border-yellow-600 focus:outline-none"
               />
               <Button
                 type="button"
                 onClick={handleAddSkill}
-                className="text-md hover:bg-gray-500 hover:text-black w-1/3"
+                className="sm:text-md text-sm hover:bg-gray-500 hover:text-black sm:w-1/3 h-[2rem]"
               >
                 Add Skill
               </Button>{" "}
@@ -256,77 +263,84 @@ export default function ResumeBuilder() {
             </div>
           </div>
 
-          <div className="bg-black mb-8 p-6 space-y-4">
-            <h1 className="text-3xl text-yellow-500 mb-6 font-subheadings">
-              Experience:
+          <div className="bg-black mb-8 sm:p-6 p-4 space-y-4">
+            <h1 className="sm:text-3xl text-xl text-yellow-500 mb-6 font-subheadings">
+              Experience
             </h1>
             <div>
-              <label className="block text-lg text-white">Comapny:</label>
+              <label className="block sm:text-lg text-sm text-white">Comapny:</label>
               <input
                 type="text"
                 name="company"
                 value={formData.experience.company}
                 onChange={handleChange}
-                className="p-1 w-full rounded bg-gray-800 text-white border-2 border-transparent focus:border-yellow-600 focus:outline-none"
+                className="sm:p-1 w-full rounded bg-gray-800 text-white border-2 border-transparent focus:border-yellow-600 focus:outline-none"
+                required
               />
             </div>
             <div>
-              <label className="block text-lg text-white">Position:</label>
+              <label className="block sm:text-lg text-sm text-white">Position:</label>
               <input
                 type="text"
                 name="position"
                 value={formData.experience.position}
                 onChange={handleChange}
-                className="p-1 w-full rounded bg-gray-800 text-white border-2 border-transparent focus:border-yellow-600 focus:outline-none"
+                className="sm:p-1 w-full rounded bg-gray-800 text-white border-2 border-transparent focus:border-yellow-600 focus:outline-none"
+                required
               />
             </div>
             <div>
-              <label className="block text-lg text-white">Year:</label>
+              <label className="block sm:text-lg text-sm text-white">Year:</label>
               <input
                 type="text"
                 name="year"
                 value={formData.experience.year}
                 onChange={handleChange}
-                className="p-1 w-full rounded bg-gray-800 text-white border-2 border-transparent focus:border-yellow-600 focus:outline-none"
+                className="sm:p-1 w-full rounded bg-gray-800 text-white border-2 border-transparent focus:border-yellow-600 focus:outline-none"
+                required
               />
             </div>
           </div>
-          <Button className="text-lg font-bold flex justify-center items-center hover:bg-gray-500 hover:text-black w-1/3 h-[4rem]">
+          <Button className="sm:text-lg text-md font-bold flex justify-center items-center hover:bg-gray-500 hover:text-black sm:w-1/3 md:w-1/2 w-full sm:h-[4rem] h-[3rem]">
             Generate Your Resume
           </Button>
         </form>
 
-        {submittedData && (
-          <div className="bg-white text-black mt-6 p-4 rounded">
-            <h2 className="text-4xl text-center font-bold font-subheadings mb-10">
+        
+      </div>
+
+      <div>
+      {submittedData && (
+          <div className="bg-white text-black mt-10 border-[4px] border-yellow-400 sm:p-6 p-4 rounded-lg max-w-5xl w-full mx-auto">
+            <h2 className="text-5xl text-center font-bold font-heading mb-10 rounded-3xl shadow-xl p-4">
               Resume
             </h2>
-            <div className="grid grid-cols-2 gap-10">
-              <div className="flex flex-col gap-2">
+            <div className="sm:grid sm:grid-cols-2 sm:gap-10">
+              <div className="flex flex-col gap-2 mb-10">
                 <div>
-                  <h1 className="text-3xl text-gray-500 font-subheadings">
+                  <h1 className="sm:text-3xl text-xl text-gray-500 font-subheadings">
                     ◇ Personal Information
                   </h1>
-                  <hr className="border-[2px] border-yellow-400 w-[22rem] mt-2 mb-3" />
+                  <hr className="border-[2px] border-yellow-400 sm:w-[22rem] mt-2 mb-3" />
                 </div>
 
                 <h1 className="text-sm text-gray-500">
                   Name:
-                  <span className="text-xl text-black font-bold">
+                  <span className="sm:text-xl text-lg text-black font-bold">
                     {" "}
                     {submittedData.name}
                   </span>
                 </h1>
                 <h1 className="text-sm text-gray-500">
                   Email:
-                  <span className="text-xl text-black font-bold">
+                  <span className="sm:text-xl text-sm text-black font-bold">
                     {" "}
                     {submittedData.email}
                   </span>
                 </h1>
                 <h1 className="text-sm text-gray-500">
                   Phone:
-                  <span className="text-xl text-black font-bold">
+                  <span className="sm:text-xl text-lg text-black font-bold">
                     {" "}
                     {submittedData.phone}
                   </span>
@@ -335,36 +349,36 @@ export default function ResumeBuilder() {
 
               <div className="flex flex-col gap-2 mb-10">
                 <div>
-                  <h1 className="text-3xl text-gray-500 font-subheadings">
+                  <h1 className="sm:text-3xl text-xl text-gray-500 font-subheadings">
                     ◇ Education
                   </h1>
-                  <hr className="border-[2px] border-yellow-400 w-[12rem] mt-2 mb-3" />
+                  <hr className="border-[2px] border-yellow-400 sm:w-[12rem] mt-2 mb-3" />
                 </div>
 
                 <h1 className="text-sm text-gray-500">
                   Highest Education:
-                  <span className="text-xl text-black font-bold">
+                  <span className="sm:text-xl text-md text-black font-bold">
                     {" "}
                     {submittedData.education.highestEducation}
                   </span>
                 </h1>
                 <h1 className="text-sm text-gray-500">
                   School:
-                  <span className="text-xl text-black font-bold">
+                  <span className="sm:text-xl text-md text-black font-bold">
                     {" "}
                     {submittedData.education.school}
                   </span>
                 </h1>
                 <h1 className="text-sm text-gray-500">
                   Field:
-                  <span className="text-xl text-black font-bold">
+                  <span className="sm:text-xl text-md text-black font-bold">
                     {" "}
                     {submittedData.education.field}
                   </span>
                 </h1>
                 <h1 className="text-sm text-gray-500">
                   Passing Year:
-                  <span className="text-xl text-black font-bold">
+                  <span className="sm:text-xl text-md text-black font-bold">
                     {" "}
                     {submittedData.education.passingYear}
                   </span>
@@ -373,16 +387,16 @@ export default function ResumeBuilder() {
 
               <div className="flex flex-col gap-2 mb-10">
                 <div>
-                  <h1 className="text-3xl text-gray-500 font-subheadings">
+                  <h1 className="sm:text-3xl text-xl text-gray-500 font-subheadings">
                     ◇ Skills
                   </h1>
-                  <hr className="border-[2px] border-yellow-400 w-[8rem] mt-2 mb-3" />
+                  <hr className="border-[2px] border-yellow-400 sm:w-[8rem] mt-2 mb-3" />
                 </div>
 
                 <div className="flex flex-wrap gap-2">
                   {submittedData.skills.map((skill, index) => (
                     <div
-                      className="bg-gray-400 p-2 text-center rounded-full shadow-xl inline-flex justify-center items-center"
+                      className="bg-gray-300 sm:p-2 p-1 text-center text-sm rounded-full shadow-xl inline-flex justify-center items-center"
                       key={index}
                     >
                       💡 {skill}
@@ -393,29 +407,29 @@ export default function ResumeBuilder() {
 
               <div className="flex flex-col gap-2 mb-10">
                 <div>
-                  <h1 className="text-3xl text-gray-500 font-subheadings">
+                  <h1 className="sm:text-3xl text-xl text-gray-500 font-subheadings">
                     ◇ Experience
                   </h1>
-                  <hr className="border-[2px] border-yellow-400 w-[13rem] mt-2 mb-3" />
+                  <hr className="border-[2px] border-yellow-400 sm:w-[13rem] mt-2 mb-3" />
                 </div>
 
                 <h1 className="text-sm text-gray-500">
                   Company:
-                  <span className="text-xl text-black font-bold">
+                  <span className="sm:text-xl text-md text-black font-bold">
                     {" "}
                     {submittedData.experience.company}
                   </span>
                 </h1>
                 <h1 className="text-sm text-gray-500">
                   Position:
-                  <span className="text-xl text-black font-bold">
+                  <span className="sm:text-xl text-md text-black font-bold">
                     {" "}
                     {submittedData.experience.position}
                   </span>
                 </h1>
                 <h1 className="text-sm text-gray-500">
                   Year:
-                  <span className="text-xl text-black font-bold">
+                  <span className="sm:text-xl text-md text-black font-bold">
                     {" "}
                     {submittedData.experience.year}
                   </span>
