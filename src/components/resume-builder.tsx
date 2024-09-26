@@ -268,7 +268,7 @@ export default function ResumeBuilder() {
               Experience
             </h1>
             <div>
-              <label className="block sm:text-lg text-sm text-white">Comapny:</label>
+              <label className="block sm:text-lg text-sm text-white">Company:</label>
               <input
                 type="text"
                 name="company"
